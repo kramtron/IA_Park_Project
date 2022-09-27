@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149716}
   m_LocalRotation: {x: -0, y: 0.707098, z: -0, w: 0.7071156}
-  m_LocalPosition: {x: -83.1, y: 2.72, z: -14.3}
+  m_LocalPosition: {x: -36, y: 2.72, z: -14.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -179,7 +179,7 @@ MonoBehaviour:
   turnAcc: 2
   acc: 10
   maxTurnSpeed: 15
-  maxSpeed: 20
+  maxSpeed: 10
   minSpeed: 0
   angle: 60
   turnSpeed: 0
@@ -542,7 +542,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107661155}
   m_LocalRotation: {x: -0.35366037, y: -0.010953121, z: 0.004164906, w: -0.9353005}
-  m_LocalPosition: {x: -8.130368, y: 19.703413, z: -33.135624}
+  m_LocalPosition: {x: -8.3, y: 26.7, z: -41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
