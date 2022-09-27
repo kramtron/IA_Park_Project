@@ -6,6 +6,7 @@ using UnityEngine;
 public class DynamicScript : MonoBehaviour
 {
     [SerializeField] GameObject target;
+   
 
     Vector3 dir;
     Vector3 mov;
