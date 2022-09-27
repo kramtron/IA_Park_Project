@@ -17,7 +17,7 @@ public class DynamicScript : MonoBehaviour
     public float acc = 5;
     public float maxTurnSpeed = 15;
     public float maxSpeed = 20;
-
+    public float minSpeed = 0;
 
     public float angle;
     public float turnSpeed;
@@ -55,7 +55,9 @@ public class DynamicScript : MonoBehaviour
         }*/
 
         if (Vector3.Distance(target.transform.position, transform.position) <= stopDistance)
+        {
             SlowToTarget();
+        }
         else
             MoveToTarget();
 
@@ -82,8 +84,8 @@ public class DynamicScript : MonoBehaviour
     {
         turnSpeed += turnAcc * Time.deltaTime;
         turnSpeed = Mathf.Min(turnSpeed, maxTurnSpeed);
-        vel -= acc * Time.deltaTime;
-        vel = Mathf.Max(vel, maxSpeed);
+        vel -= acc / Time.deltaTime;
+        vel = Mathf.Max(vel, minSpeed);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
         transform.position += transform.forward.normalized * vel * Time.deltaTime;
     }
