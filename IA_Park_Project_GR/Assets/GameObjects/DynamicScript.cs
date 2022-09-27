@@ -6,17 +6,24 @@ using UnityEngine;
 public class DynamicScript : MonoBehaviour
 {
     [SerializeField] GameObject target;
-   
+    
 
     Vector3 dir;
     Vector3 mov;
     [SerializeField] float vel = 0;
     private float freq = 0f;
     public float freqAct;
+    public float turnAcc = 2;
+    public float acc = 5;
+    public float maxTurnSpeed = 15;
+    public float maxSpeed = 20;
+
 
     public float angle;
     public float turnSpeed;
     private Quaternion rotation;
+
+    public float stopDistance = 20;
 
     Vector3 newVec;
 
@@ -46,8 +53,11 @@ public class DynamicScript : MonoBehaviour
             TargetPositionChanger();
 
         }*/
-        MoveToTarget();
 
+        if (Vector3.Distance(target.transform.position, transform.position) <= stopDistance)
+            SlowToTarget();
+        else
+            MoveToTarget();
 
     }
 
@@ -60,7 +70,20 @@ public class DynamicScript : MonoBehaviour
 
     private void MoveToTarget()
     {
+        turnSpeed += turnAcc * Time.deltaTime;
+        turnSpeed = Mathf.Min(turnSpeed, maxTurnSpeed);
+        vel += acc * Time.deltaTime;
+        vel = Mathf.Max(vel, maxSpeed);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
+        transform.position += transform.forward.normalized * vel * Time.deltaTime;
+    }
 
+    private void SlowToTarget()
+    {
+        turnSpeed += turnAcc * Time.deltaTime;
+        turnSpeed = Mathf.Min(turnSpeed, maxTurnSpeed);
+        vel -= acc * Time.deltaTime;
+        vel = Mathf.Max(vel, maxSpeed);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
         transform.position += transform.forward.normalized * vel * Time.deltaTime;
     }
