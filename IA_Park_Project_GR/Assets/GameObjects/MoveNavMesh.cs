@@ -11,6 +11,7 @@ public class MoveNavMesh : MonoBehaviour
     private float freq = 0f;
     public float freqAct;
 
+    private Quaternion rotation;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,5 +34,17 @@ public class MoveNavMesh : MonoBehaviour
     void Seek()
     {
         agent.destination = target.transform.position;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other is NavMeshAgent)
+        {
+            agent.angularSpeed += agent.acceleration * Time.deltaTime;
+            agent.angularSpeed = Mathf.Min(agent.angularSpeed, agent.angularSpeed*1,5);
+            agent.speed += agent.acceleration * Time.deltaTime;
+            agent.speed = Mathf.Max(agent.speed, agent.speed*1,5);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * agent.angularSpeed);
+            transform.position += transform.forward.normalized * agent.speed * Time.deltaTime;
+        }
     }
 }
