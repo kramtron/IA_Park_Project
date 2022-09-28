@@ -5,6 +5,7 @@ using UnityEngine;
 public class ZombiePath : MonoBehaviour
 {
 
+    
     Vector3 target;
     Vector3 dir;
     Vector3 mov;
