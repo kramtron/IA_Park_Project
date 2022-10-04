@@ -1,11 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class DynamicScript : MonoBehaviour
 {
-    [SerializeField] GameObject target;
+    /*[SerializeField] GameObject target;
     
 
     Vector3 dir;
@@ -52,7 +52,7 @@ public class DynamicScript : MonoBehaviour
             posAct -= posActTime;
             TargetPositionChanger();
 
-        }*/
+        }
 
         if (Vector3.Distance(target.transform.position, transform.position) <= stopDistance)
         {
@@ -98,5 +98,53 @@ public class DynamicScript : MonoBehaviour
         angle = Mathf.Rad2Deg * Mathf.Atan2(mov.x, mov.z);
         rotation = Quaternion.AngleAxis(angle, Vector3.up);
         
+    }*/
+
+    [SerializeField] GameObject target;
+
+    NavMeshAgent agent;
+
+
+    private float freq = 0f;
+    public float freqAct;
+
+
+
+    Vector3 newVec;
+
+    private float posAct;
+    private float posActTime;
+    private bool near = false;
+    private float stopDistance = 3;
+    // Start is called before the first frame update
+    void Start()
+    {
+
+        agent = GetComponent<NavMeshAgent>();
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        freq += Time.deltaTime;
+        if (freq > freqAct)
+        {
+            freq -= freqAct;
+            Seek();
+
+        }
+    }
+ 
+
+
+
+
+
+
+    private void Seek()
+    {
+        agent.destination = target.transform.position;
+
     }
 }

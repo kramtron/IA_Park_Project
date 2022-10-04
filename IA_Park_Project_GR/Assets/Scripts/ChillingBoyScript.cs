@@ -21,6 +21,7 @@ public class ChillingBoyScript : MonoBehaviour
     private float posAct;
     private float posActTime;
     private bool near = false;
+    private float stopDistance = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +47,7 @@ public class ChillingBoyScript : MonoBehaviour
         {
             posAct += Time.deltaTime;
 
-            posActTime = Random.Range(5, 20);
+            posActTime = Random.Range(5, 10);
 
             if (posAct > posActTime)
             {
@@ -56,12 +57,17 @@ public class ChillingBoyScript : MonoBehaviour
             }
         }
 
-       
+        if (Vector3.Distance(target.transform.position, transform.position) <= stopDistance)
+        {
+            near = true;
+        }
+        else
+            near = false;
     }
     private void TargetPositionChanger()
     {
 
-         target.transform.position = newVec = new Vector3(UnityEngine.Random.Range(20, -20), 0, UnityEngine.Random.Range(20, -20));
+         target.transform.position = newVec = new Vector3(UnityEngine.Random.Range(5, -5), 0, UnityEngine.Random.Range(5, -5));
     }
 
 
