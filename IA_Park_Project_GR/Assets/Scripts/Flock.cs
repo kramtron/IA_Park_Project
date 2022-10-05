@@ -18,7 +18,7 @@ public class Flock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speed = Random.Range(myManager.MinSpeed, myManager.MaxSpeed);
+        //speed = Random.Range(myManager.MinSpeed, myManager.MaxSpeed);
         direction = (Cohesion() + Align() + Separation()).normalized * speed;
 
         transform.rotation = Quaternion.Slerp(transform.rotation,
