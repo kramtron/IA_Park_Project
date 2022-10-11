@@ -1308,10 +1308,10 @@ MonoBehaviour:
   Randomize: 0
   FollowLid: 0
   Lider: {fileID: 2004665440}
-  MinSpeed: 1.2
-  MaxSpeed: 1.5
-  NeighbourDistance: 6
-  RotationSpeed: 1
+  MinSpeed: 3
+  MaxSpeed: 3.5
+  NeighbourDistance: 4
+  RotationSpeed: 0.5
 --- !u!4 &1442072721
 Transform:
   m_ObjectHideFlags: 0
