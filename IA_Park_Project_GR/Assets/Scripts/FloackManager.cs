@@ -6,7 +6,7 @@ public class FloackManager : MonoBehaviour
 {
     public GameObject fishPrefab;
     public GameObject[] allFish;
-    public int numFish = 37;
+    public int numFish = 69;
 
     public Vector3 Limits;
 
@@ -37,7 +37,8 @@ public class FloackManager : MonoBehaviour
         for (int i = 0; i < numFish; ++i)
         {
             Vector3 pos = this.transform.position + new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f));
-            Vector3 randomize = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f));
+            //Vector3 randomize = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f));
+            Vector3 randomize = new Vector3(0,1,0);
             allFish[i] = (GameObject)Instantiate(fishPrefab, pos, Quaternion.LookRotation(randomize));
             allFish[i].GetComponent<Flock>().myManager = this;
         }

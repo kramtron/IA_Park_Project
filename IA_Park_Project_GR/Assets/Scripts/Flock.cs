@@ -6,8 +6,11 @@ public class Flock : MonoBehaviour
 {
     public FloackManager myManager;
 
-    float speed;
+    float speed = 2;
     public Vector3 direction;
+
+    //[Range(0.0f, 5.0f)]
+    //public float n = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -19,11 +22,14 @@ public class Flock : MonoBehaviour
     void Update()
     {
         //speed = Random.Range(myManager.MinSpeed, myManager.MaxSpeed);
-        direction = (Cohesion() + Align() + Separation()).normalized * speed;
+
+        //direction = (Cohesion() + Align() + Separation() + FolowLid()).normalized * speed;
+        direction = (FolowLid()).normalized * speed;
 
         transform.rotation = Quaternion.Slerp(transform.rotation,
                                       Quaternion.LookRotation(direction),
                                       myManager.RotationSpeed * Time.deltaTime);
+
         transform.Translate(0.0f, 0.0f, Time.deltaTime * speed);
     }
 
@@ -43,10 +49,18 @@ public class Flock : MonoBehaviour
                 }
             }
         }
-        if (num > 0)
-            cohesion = (cohesion / num - transform.position).normalized;
-
-        return cohesion;
+        if (num == 0)
+        {
+            foreach (GameObject go in myManager.allFish)
+            {
+                if (go != this.gameObject)
+                {
+                        cohesion += go.transform.position;
+                        num++;
+                }
+            }
+        }
+        return (cohesion / num - transform.position).normalized;
     }
 
     Vector3 Align()
@@ -93,5 +107,10 @@ public class Flock : MonoBehaviour
         }
 
         return separation;
+    }
+
+    Vector3 FolowLid()
+    {
+        return ((myManager.Lider.transform.position - transform.position).normalized);
     }
 }

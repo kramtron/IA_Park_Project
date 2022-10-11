@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.100292064, g: 0.09734881, b: 0.0747473, a: 1}
+  m_IndirectSpecularColor: {r: 0.10029164, g: 0.09734853, b: 0.07474716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1302,16 +1302,16 @@ MonoBehaviour:
   fishPrefab: {fileID: 8433857237487822261, guid: c3994cea0bd31a54f9236e3fc950c899,
     type: 3}
   allFish: []
-  numFish: 37
+  numFish: 69
   Limits: {x: 7, y: 5, z: 7}
   Bounded: 1
   Randomize: 0
   FollowLid: 0
-  Lider: {fileID: 0}
-  MinSpeed: 1.41
-  MaxSpeed: 3.89
-  NeighbourDistance: 9.68
-  RotationSpeed: 0.4
+  Lider: {fileID: 2004665440}
+  MinSpeed: 1.2
+  MaxSpeed: 1.5
+  NeighbourDistance: 6
+  RotationSpeed: 1
 --- !u!4 &1442072721
 Transform:
   m_ObjectHideFlags: 0
@@ -2097,6 +2097,11 @@ PrefabInstance:
       propertyPath: m_Acceleration
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 6776255238104333558, guid: 0544682dee15a7d4d918859f737c7518,
+        type: 3}
+      propertyPath: m_WalkableMask
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 6776255238104333559, guid: 0544682dee15a7d4d918859f737c7518,
         type: 3}
       propertyPath: target
@@ -2288,7 +2293,7 @@ PrefabInstance:
     - target: {fileID: 792237839873002370, guid: 33ff24a80f39e804e8c4bf4f8cd3b8fd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.3
+      value: -64.1
       objectReference: {fileID: 0}
     - target: {fileID: 792237839873002370, guid: 33ff24a80f39e804e8c4bf4f8cd3b8fd,
         type: 3}
