@@ -5,29 +5,25 @@ using UnityEngine.AI;
 
 public class ChillingBoyScript : MonoBehaviour
 {
-
     [SerializeField] GameObject target;
 
     NavMeshAgent agent;
 
-
     private float freq = 0f;
     public float freqAct;
   
+    private float posAct;
+    private float posActTime;
+    private float stopDistance = 3;
 
+    private bool near = false;
 
     Vector3 newVec;
 
-    private float posAct;
-    private float posActTime;
-    private bool near = false;
-    private float stopDistance = 3;
     // Start is called before the first frame update
     void Start()
     {
-
         agent = GetComponent<NavMeshAgent>();
-
     }
 
     // Update is called once per frame
@@ -38,22 +34,17 @@ public class ChillingBoyScript : MonoBehaviour
         {
             freq -= freqAct;
             Seek();
-
         }
-
-        
-        
+     
         if (near)
         {
             posAct += Time.deltaTime;
-
             posActTime = Random.Range(5, 10);
 
             if (posAct > posActTime)
             {
                 posAct = 0;
                 TargetPositionChanger();
-
             }
         }
 
@@ -64,20 +55,14 @@ public class ChillingBoyScript : MonoBehaviour
         else
             near = false;
     }
+
     private void TargetPositionChanger()
     {
-
-         target.transform.position = newVec = new Vector3(UnityEngine.Random.Range(5, -5), 0, UnityEngine.Random.Range(5, -5));
+        target.transform.position = newVec = new Vector3(UnityEngine.Random.Range(5, -5), 0, UnityEngine.Random.Range(5, -5));
     }
-
-
-   
-
-   
 
     private void Seek()
     {
         agent.destination=target.transform.position;
-
     }
 }

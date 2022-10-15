@@ -6,19 +6,15 @@ public class FloackManager : MonoBehaviour
 {
     public GameObject fishPrefab;
     public GameObject[] allFish;
-    public int numFish = 37;
 
-    public Vector3 Limits;
+    public GameObject Lider;
+
+    public int numFish = 37;
 
     private float freq = 0f;
     public float freqAct;
 
-    public bool Bounded = true;
-    public bool Randomize = false;
-    public bool FollowLid = false;
-
-    public GameObject Lider;
-
+    public Vector3 Limits;
 
     [Header("\n\nFish Settings")]
     [Range(0.0f, 5.0f)]
@@ -41,7 +37,7 @@ public class FloackManager : MonoBehaviour
         {
             Vector3 pos = this.transform.position + new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f));
             Vector3 randomize = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f));
-           // Vector3 randomize = new Vector3(0,1,0);
+
             allFish[i] = (GameObject)Instantiate(fishPrefab, pos, Quaternion.LookRotation(randomize));
             allFish[i].GetComponent<Flock>().myManager = this;
         }

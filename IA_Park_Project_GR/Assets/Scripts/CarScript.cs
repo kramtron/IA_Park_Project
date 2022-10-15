@@ -12,28 +12,29 @@ public class CarScript : MonoBehaviour
     [SerializeField] GameObject target5;
     [SerializeField] GameObject target6;
 
+    private GameObject[] targetArray;
+
+    private GameObject actualTarget;
+
     NavMeshAgent agent;
 
-
     private int num_targets = 6;
+
+    private int targetNum = 0;
 
     private float freq = 0f;
     public float freqAct;
 
-
-    private GameObject[] targetArray;
-
-
-    private GameObject actualTarget;
-    Vector3 newVec;
-
     private float posAct;
     private float posActTime;
-    private bool near = false;
+
     private float stopDistance = 3;
 
-    private int targetNum = 0;
+    private bool near = false;
     private bool turning = false;
+
+    Vector3 newVec;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +48,6 @@ public class CarScript : MonoBehaviour
         targetArray[5] = target6;
 
         agent = GetComponent<NavMeshAgent>();
-
     }
 
     // Update is called once per frame
@@ -63,7 +63,6 @@ public class CarScript : MonoBehaviour
             }
             else
             {
-
                 if (targetNum == 2 && random == 1 && !turning)
                 {
                     targetNum = 5;
@@ -73,16 +72,13 @@ public class CarScript : MonoBehaviour
                 {
                     targetNum = 2;
                     turning = true;
-
                 }
                 else
                 {
                     //if(turning)
                     targetNum += 1;
                     turning = false;
-
                 }
-
             }
         }
 
@@ -93,7 +89,6 @@ public class CarScript : MonoBehaviour
         {
             freq -= freqAct;
             Seek();
-
         }
 
         if (Vector3.Distance(actualTarget.transform.position, transform.position) <= stopDistance)
@@ -103,12 +98,6 @@ public class CarScript : MonoBehaviour
         else
             near = false;
     }
-
-
-
-
-
-
 
     private void Seek()
     {

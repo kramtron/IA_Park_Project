@@ -10,26 +10,26 @@ public class RunnerScript : MonoBehaviour
     [SerializeField] GameObject target3;
     [SerializeField] GameObject target4;
 
+    private GameObject[] targetArray;
+
+    private GameObject actualTarget;
+
     NavMeshAgent agent;
 
     private int num_targets = 4;
 
+    private int targetNum = 0;
+
     private float freq = 0f;
     public float freqAct;
 
-
-    private GameObject[] targetArray;
-
-
-    private GameObject actualTarget;
-    Vector3 newVec;
-
     private float posAct;
     private float posActTime;
-    private bool near = false;
-    //private float stopDistance = 0;
 
-    private int targetNum = 0;
+    private bool near = false;
+
+    Vector3 newVec;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,13 +41,11 @@ public class RunnerScript : MonoBehaviour
             targetArray[3] = target4;
         
         agent = GetComponent<NavMeshAgent>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (near)
         {
             if (targetNum == 3)
@@ -59,12 +57,12 @@ public class RunnerScript : MonoBehaviour
         }
 
         actualTarget = targetArray[targetNum];
+
         freq += Time.deltaTime;
         if (freq > freqAct)
         {
             freq -= freqAct;
             Seek();
-
         }
 
         if (Vector3.Distance( transform.position, actualTarget.transform.position) <= agent.stoppingDistance)
@@ -75,15 +73,8 @@ public class RunnerScript : MonoBehaviour
             near = false;
     }
   
-
-
-
-
-
-
-    private void Seek()
+  private void Seek()
     {
         agent.destination = actualTarget.transform.position;
-
     }
 }

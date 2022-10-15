@@ -12,6 +12,7 @@ public class MoveNavMesh : MonoBehaviour
     public float freqAct;
 
     private Quaternion rotation;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,20 +22,19 @@ public class MoveNavMesh : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         freq += Time.deltaTime;
+
         if (freq > freqAct)
         {
             freq -= freqAct;
             Seek();
-
         }
     }
-
     void Seek()
     {
         agent.destination = target.transform.position;
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other is NavMeshAgent)
