@@ -1367,64 +1367,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2852018611135991420}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1442072719
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1442072721}
-  - component: {fileID: 1442072720}
-  m_Layer: 0
-  m_Name: FlockMang
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1442072720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1442072719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b959397942a35974ba210a76e5b32386, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 8433857237487822261, guid: c3994cea0bd31a54f9236e3fc950c899,
-    type: 3}
-  allFish: []
-  numFish: 69
-  Limits: {x: 7, y: 5, z: 7}
-  freqAct: 1
-  Bounded: 1
-  Randomize: 0
-  FollowLid: 0
-  Lider: {fileID: 1039569022}
-  MinSpeed: 3
-  MaxSpeed: 3.5
-  NeighbourDistance: 3
-  RotationSpeed: 1.5
---- !u!4 &1442072721
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1442072719}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.329286, y: 4, z: 12.8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1504094918
 GameObject:
   m_ObjectHideFlags: 0
@@ -2544,6 +2486,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea39bc952b3f10948ac430b86a2078f6, type: 3}
+--- !u!1001 &4901161147811920246
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4901161148708172263, guid: 6e44ceabcc98f214a8d9bf7f7427278d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901161148708172263, guid: 6e44ceabcc98f214a8d9bf7f7427278d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.329286
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901161148708172263, guid: 6e44ceabcc98f214a8d9bf7f7427278d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901161148708172263, guid: 6e44ceabcc98f214a8d9bf7f7427278d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901161148708172263, guid: 6e44ceabcc98f214a8d9bf7f7427278d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901161148708172263, guid: 6e44ceabcc98f214a8d9bf7f7427278d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901161148708172263, guid: 6e44ceabcc98f214a8d9bf7f7427278d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901161148708172263, guid: 6e44ceabcc98f214a8d9bf7f7427278d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901161148708172263, guid: 6e44ceabcc98f214a8d9bf7f7427278d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901161148708172263, guid: 6e44ceabcc98f214a8d9bf7f7427278d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901161148708172263, guid: 6e44ceabcc98f214a8d9bf7f7427278d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901161148708172281, guid: 6e44ceabcc98f214a8d9bf7f7427278d,
+        type: 3}
+      propertyPath: m_Name
+      value: FlockMang
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e44ceabcc98f214a8d9bf7f7427278d, type: 3}
 --- !u!1001 &5507915467976793877
 PrefabInstance:
   m_ObjectHideFlags: 0
