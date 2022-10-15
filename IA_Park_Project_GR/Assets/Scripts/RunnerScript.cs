@@ -27,7 +27,7 @@ public class RunnerScript : MonoBehaviour
     private float posAct;
     private float posActTime;
     private bool near = false;
-    private float stopDistance = 1;
+    //private float stopDistance = 0;
 
     private int targetNum = 0;
     // Start is called before the first frame update
@@ -67,11 +67,7 @@ public class RunnerScript : MonoBehaviour
 
         }
 
-
-
-       
-
-        if (Vector3.Distance(actualTarget.transform.position, transform.position) <= stopDistance)
+        if (Vector3.Distance( transform.position, actualTarget.transform.position) <= agent.stoppingDistance)
         {
             near = true;
         }
