@@ -121,6 +121,6 @@ public class Flock : MonoBehaviour
 
     Vector3 FolowLid()
     {
-        return ((myManager.Lider.transform.position - transform.position).normalized);
+        return ((myManager.Leader.transform.position - transform.position).normalized);
     }
 }

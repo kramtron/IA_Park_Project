@@ -7,7 +7,7 @@ public class FloackManager : MonoBehaviour
     public GameObject fishPrefab;
     public GameObject[] allFish;
 
-    public GameObject Lider;
+    public GameObject Leader;
 
     public int numFish = 37;
 
