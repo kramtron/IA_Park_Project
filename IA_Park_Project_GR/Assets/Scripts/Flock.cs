@@ -9,6 +9,8 @@ public class Flock : MonoBehaviour
     float speed = 2;
     public Vector3 direction;
 
+    private float freq = 0f;
+    public float freqAct;
     //[Range(0.0f, 5.0f)]
     //public float n = 5;
 
@@ -22,9 +24,13 @@ public class Flock : MonoBehaviour
     void Update()
     {
         //speed = Random.Range(myManager.MinSpeed, myManager.MaxSpeed);
-
-        //direction = (Cohesion() + Align() + Separation() + FolowLid()).normalized * speed;
-        direction = (FolowLid()).normalized * speed;
+        freq += Time.deltaTime;
+        if (freq > freqAct)
+        {
+            freq -= freqAct;
+            direction = (Cohesion() + Align() + Separation() + (FolowLid() * 5)).normalized * speed;
+            //direction = (FolowLid()).normalized * speed;
+        }
 
         transform.rotation = Quaternion.Slerp(transform.rotation,
                                       Quaternion.LookRotation(direction),
@@ -49,6 +55,12 @@ public class Flock : MonoBehaviour
                 }
             }
         }
+
+        if (num > 0)
+        {
+            return (cohesion / num - transform.position).normalized;
+        }
+
         if (num == 0)
         {
             foreach (GameObject go in myManager.allFish)

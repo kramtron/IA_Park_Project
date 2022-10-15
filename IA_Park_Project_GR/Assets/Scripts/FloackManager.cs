@@ -6,9 +6,12 @@ public class FloackManager : MonoBehaviour
 {
     public GameObject fishPrefab;
     public GameObject[] allFish;
-    public int numFish = 69;
+    public int numFish = 37;
 
     public Vector3 Limits;
+
+    private float freq = 0f;
+    public float freqAct;
 
     public bool Bounded = true;
     public bool Randomize = false;
@@ -37,8 +40,8 @@ public class FloackManager : MonoBehaviour
         for (int i = 0; i < numFish; ++i)
         {
             Vector3 pos = this.transform.position + new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f));
-            //Vector3 randomize = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f));
-            Vector3 randomize = new Vector3(0,1,0);
+            Vector3 randomize = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f));
+           // Vector3 randomize = new Vector3(0,1,0);
             allFish[i] = (GameObject)Instantiate(fishPrefab, pos, Quaternion.LookRotation(randomize));
             allFish[i].GetComponent<Flock>().myManager = this;
         }
@@ -47,6 +50,11 @@ public class FloackManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        freq += Time.deltaTime;
+        if (freq > freqAct)
+        {
+            freq -= freqAct;
+            RotationSpeed = Random.Range(1.0f, 2.0f);
+        }
     }
 }

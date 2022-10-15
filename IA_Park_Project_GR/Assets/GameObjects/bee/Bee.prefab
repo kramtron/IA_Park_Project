@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5328795477399188076}
   - component: {fileID: 5752844858577823558}
   - component: {fileID: 1669579577916673052}
+  - component: {fileID: 7093359950744504791}
   m_Layer: 0
   m_Name: Bee
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8433857237487822261}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.329286, y: 2.777, z: 12.8}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -94,7 +95,7 @@ SphereCollider:
   m_GameObject: {fileID: 8433857237487822261}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -112,3 +113,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myManager: {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
+  freqAct: 0.5
+--- !u!65 &7093359950744504791
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8433857237487822261}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
