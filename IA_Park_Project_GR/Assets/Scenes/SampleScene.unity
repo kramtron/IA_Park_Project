@@ -1476,7 +1476,12 @@ PrefabInstance:
         type: 3}
       propertyPath: Leader
       value: 
-      objectReference: {fileID: 1809980507}
+      objectReference: {fileID: 935814035}
+    - target: {fileID: 4901161148708172262, guid: 6e44ceabcc98f214a8d9bf7f7427278d,
+        type: 3}
+      propertyPath: freqAct
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4901161148708172263, guid: 6e44ceabcc98f214a8d9bf7f7427278d,
         type: 3}
       propertyPath: m_RootOrder
