@@ -1,7 +1,11 @@
 {
   "dependencies": {
     "com.unity.burst": {
+<<<<<<< Updated upstream
       "version": "1.7.3",
+=======
+      "version": "1.6.5",
+>>>>>>> Stashed changes
       "depth": 1,
       "source": "registry",
       "dependencies": {
