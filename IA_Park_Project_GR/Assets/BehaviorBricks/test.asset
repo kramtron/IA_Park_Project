@@ -29,11 +29,11 @@ MonoBehaviour:
     </_rootList>\r\n      <_nodes>\r\n        <nodes>\r\n          <SequenceNode
     id=\"1\" />\r\n          <ActionNode id=\"2\" />\r\n        </nodes>\r\n     
     </_nodes>\r\n    </BehaviorTree>\r\n    <SequenceNode id=\"1\">\r\n      <_data>\r\n       
-    <data breakpoint=\"0\" selected=\"True\" position=\"338 238.2\" name=\"Sequence\"
+    <data breakpoint=\"0\" selected=\"False\" position=\"338 237.2\" name=\"Sequence\"
     description=\"Executes all its children in sequence until all of them are successful\"
     cardinality=\"-1\" hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n         
     <SequenceNode id=\"1\" />\r\n        </data>\r\n      </_data>\r\n    </SequenceNode>\r\n   
-    <ActionNode id=\"2\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
+    <ActionNode id=\"2\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"True\"
     position=\"186 437.2\" name=\"Vector3/GetRandomInArea\" description=\"Gets a
     random position from a given area\" cardinality=\"0\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <ActionNode id=\"2\" />\r\n          <SequenceNode
