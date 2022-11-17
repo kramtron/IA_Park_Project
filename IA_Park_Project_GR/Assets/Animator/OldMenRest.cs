@@ -16,9 +16,12 @@ public class OldMenRest : StateMachineBehaviour
         BenchCurrent = animator.GetInteger("BenchMax");
         BenchCurrent++;
         animator.SetInteger("BenchMax", BenchCurrent);
+
+        agent.gameObject.GetComponent<CurrentBench>().TargetBench.GetComponent<amountOldMen>().currentAmount = animator.GetInteger("BenchMax");
+
         agent = animator.gameObject.GetComponent<NavMeshAgent>();
 
-        agent.destination = BlackBoard.currentTarget.transform.position;
+        agent.destination = agent.gameObject.GetComponent<CurrentBench>().TargetBench.transform.position;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -35,6 +38,9 @@ public class OldMenRest : StateMachineBehaviour
         BenchCurrent = animator.GetInteger("BenchMax");
         BenchCurrent--;
         animator.SetInteger("BenchMax", BenchCurrent);
+
+        agent.gameObject.GetComponent<CurrentBench>().TargetBench.GetComponent<amountOldMen>().currentAmount = animator.GetInteger("BenchMax");
+
         animator.SetFloat("restTime", 0);
         animator.SetBool("inBench", false);
     }

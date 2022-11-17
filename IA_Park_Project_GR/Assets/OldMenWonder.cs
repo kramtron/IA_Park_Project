@@ -9,7 +9,6 @@ public class OldMenWonder : StateMachineBehaviour
     public GameObject target1;
     public GameObject target2;
     public GameObject target3;
-    public GameObject currentTarget;
 
     private float freq = 0f;
     public float freqAct;
@@ -40,17 +39,20 @@ public class OldMenWonder : StateMachineBehaviour
         if((Vector3.Distance(agent.transform.position, target1.transform.position) < 5f) && animator.GetFloat("MinWonder") > 50f)
         {
             Debug.Log("Find1");
+            agent.gameObject.GetComponent<CurrentBench>().TargetBench = target1;
             BlackBoard.currentTarget = target1;
             animator.SetBool("Bench", true);
         }
         else if ((Vector3.Distance(agent.transform.position, target2.transform.position) < 5f) && animator.GetFloat("MinWonder") > 50f)
         {
+            agent.gameObject.GetComponent<CurrentBench>().TargetBench = target2;
             BlackBoard.currentTarget = target2;
             Debug.Log("Find2");
             animator.SetBool("Bench", true);
         }
         else if ((Vector3.Distance(agent.transform.position, target3.transform.position) < 5f) && animator.GetFloat("MinWonder") > 50f)
         {
+            agent.gameObject.GetComponent<CurrentBench>().TargetBench = target3;
             BlackBoard.currentTarget = target3;
             Debug.Log("Find3");
             animator.SetBool("Bench", true);
@@ -66,6 +68,7 @@ public class OldMenWonder : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.SetFloat("MinWonder", 0);
+        agent.gameObject.GetComponent<CurrentBench>().TargetBench = BlackBoard.currentTarget;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

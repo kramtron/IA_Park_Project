@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 3235842744120819578}
   - component: {fileID: 3235842744120819579}
   - component: {fileID: 3235842744120819576}
+  - component: {fileID: 8239886816075527045}
   m_Layer: 0
   m_Name: OldMen
   m_TagString: Untagged
@@ -174,3 +175,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8239886816075527045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3235842744120819577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c4665df077d0864d904427173856408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetBench: {fileID: 0}

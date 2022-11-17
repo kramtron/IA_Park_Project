@@ -7,21 +7,25 @@ public class OldMenApproach : StateMachineBehaviour
 {
     public NavMeshAgent agent;
 
-    Vector3 targetC;
+    public GameObject targetC;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        targetC = BlackBoard.currentTarget.transform.position;
+        agent.gameObject.GetComponent<CurrentBench>().TargetBench = BlackBoard.currentTarget;
+        targetC = agent.gameObject.GetComponent<CurrentBench>().TargetBench;
         agent = animator.gameObject.GetComponent<NavMeshAgent>();
-        agent.destination = targetC;
+        agent.destination = targetC.transform.position;
 
+        int amountbench = targetC.GetComponent<amountOldMen>().currentAmount;
+
+        animator.SetInteger("BenchMax", amountbench);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if(agent.transform.position.x == targetC.x && agent.transform.position.z == targetC.z)
+        if(agent.transform.position.x == targetC.transform.position.x && agent.transform.position.z == targetC.transform.position.z)
         {
             animator.SetBool("inBench", true);
         }

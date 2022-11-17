@@ -22,6 +22,8 @@ public class OldMenTalk : StateMachineBehaviour
         timeTalk += 0.1f;
         animator.SetFloat("talkTime", timeTalk);
 
+        animator.SetInteger("BenchMax", agent.gameObject.GetComponent<CurrentBench>().TargetBench.GetComponent<amountOldMen>().currentAmount);
+
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

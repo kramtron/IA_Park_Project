@@ -80,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 77145da804157f54599f7450a742a114,
         type: 3}
       propertyPath: m_Name
-      value: Bench_Without_Back
+      value: Bench_Without_Back Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 77145da804157f54599f7450a742a114,
         type: 3}
@@ -108,3 +108,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1, z: 0.5}
   m_Center: {x: 0, y: 4.294452e-16, z: 0.12087807}
+--- !u!114 &554510257700356588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4302771923883771665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 339c64b04cdf2434b89e30a24245c2b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentAmount: 0

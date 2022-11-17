@@ -80,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 77145da804157f54599f7450a742a114,
         type: 3}
       propertyPath: m_Name
-      value: Bench_Without_Back (2)
+      value: Bench_Without_Back (2) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 77145da804157f54599f7450a742a114,
         type: 3}
@@ -89,3 +89,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77145da804157f54599f7450a742a114, type: 3}
+--- !u!1 &2573105749827426848 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 77145da804157f54599f7450a742a114,
+    type: 3}
+  m_PrefabInstance: {fileID: 3419617338884335473}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-7218712526144167144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2573105749827426848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 339c64b04cdf2434b89e30a24245c2b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentAmount: 1

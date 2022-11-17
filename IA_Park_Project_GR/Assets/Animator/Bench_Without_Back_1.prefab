@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 915239368472961107}
   - component: {fileID: 915239368472961106}
   - component: {fileID: 915239368472961109}
+  - component: {fileID: 1734627568034347666}
   m_Layer: 0
   m_Name: Bench_Without_Back_1
   m_TagString: Untagged
@@ -85,3 +86,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1734627568034347666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915239368472961108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 339c64b04cdf2434b89e30a24245c2b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentAmount: 0
