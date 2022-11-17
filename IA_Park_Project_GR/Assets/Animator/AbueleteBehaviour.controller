@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3a50b0b5f8eb540b4c7acc3512aed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 0}
 --- !u!114 &-6115794536001399580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -190,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd80d024399d37342ad89713935acbbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 3235842744120819579, guid: 45ada68c4ca5614479ca7fc98c643253, type: 3}
 --- !u!114 &-1091745059974152339
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -202,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0420e616d5ddfe04e916ddfb5a316d10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
+  agent: {fileID: 3235842744120819579, guid: 45ada68c4ca5614479ca7fc98c643253, type: 3}
 --- !u!1101 &-952992447075096209
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -495,6 +497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3a50b0b5f8eb540b4c7acc3512aed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 0}
 --- !u!1102 &4915489746361717747
 AnimatorState:
   serializedVersion: 6
@@ -584,9 +587,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: BenchMax
     m_EventTreshold: 1
-  - m_ConditionMode: 1
-    m_ConditionEvent: inBench
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4915489746361717747}
   m_Solo: 0
