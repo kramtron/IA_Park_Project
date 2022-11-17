@@ -30,6 +30,7 @@ public class OldMenRest : StateMachineBehaviour
         BenchCurrent--;
         animator.SetInteger("BenchMax", BenchCurrent);
         animator.SetFloat("restTime", 0);
+        animator.SetBool("inBench", false);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
