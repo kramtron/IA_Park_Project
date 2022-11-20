@@ -708,9 +708,11 @@ MonoBehaviour:
     boolParamsNames: []
     boolParamsLostDefaultValue: 
     floatParams:
-    - 15
+    - 25
+    - 30
     floatParamsNames:
     - closeDistance
+    - DistanceWithPolice
     floatParamsLostDefaultValue: 
     stringParams: []
     stringParamsNames: []
@@ -722,10 +724,12 @@ MonoBehaviour:
     - {fileID: 576689101}
     - {fileID: 306817758}
     - {fileID: 306817758}
+    - {fileID: 1763139729}
     objectParamsNames:
     - wanderArea
     - player
     - target
+    - police
     objectParamsLostDefaultValue: 
     layerMaskParams: []
     layerMaskParamsNames: []
@@ -857,6 +861,12 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!1 &1763139729 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6677388713057992192, guid: cacbc2d2b245f8d42a1edf52867b96c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 46046823}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2748973975789971955
 PrefabInstance:
   m_ObjectHideFlags: 0
