@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class amountOldMen : MonoBehaviour
 {
-   public int currentAmount = 1;
+   public int currentAmount = 0;
 }
