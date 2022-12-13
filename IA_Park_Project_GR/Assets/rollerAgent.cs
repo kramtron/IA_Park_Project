@@ -7,11 +7,13 @@ using Unity.MLAgents.Actuators;
 public class rollerAgent : Agent
 { 
     Rigidbody rBody;
-    void Start () {
+    public Transform Target;
+    
+        void Start () {
         rBody = GetComponent<Rigidbody>();
     }
 
-    public Transform Target;
+
     public override void OnEpisodeBegin()
     {
        // If the Agent fell, zero its momentum
@@ -23,9 +25,9 @@ public class rollerAgent : Agent
         }
 
         // Move the target to a new spot
-        Target.localPosition = new Vector3(Random.value * 8 - 4,
-                                           0.5f,
-                                           Random.value * 8 - 4);
+        Target.localPosition = new Vector3(Random.value * 0f - 0.4f,
+                                           1.0f,
+                                           Random.value * 0f - 0.4f);
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -49,10 +51,10 @@ public class rollerAgent : Agent
         rBody.AddForce(controlSignal * forceMultiplier);
 
         // Rewards
-        float distanceToTarget = Vector3.Distance(this.transform.localPosition, Target.localPosition);
+        float distanceToTarget = Vector3.Distance(this.transform.positions, Target.localPosition);
 
         // Reached target
-        if (distanceToTarget < 1.42f)
+        if (distanceToTarget < 2f)
         {
             SetReward(1.0f);
             EndEpisode();
@@ -63,6 +65,14 @@ public class rollerAgent : Agent
         {
             EndEpisode();
         }
+    }
+    
+
+    private void OnTriggerEnter(Collider other){
+
+
+            SetReward(1.0f);
+            EndEpisode();
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
