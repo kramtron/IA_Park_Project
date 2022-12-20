@@ -9,10 +9,10 @@ public class rollerAgent : Agent
     Rigidbody rBody;
     public Transform Target;
     
-        void Start () {
+    void Start () 
+    {
         rBody = GetComponent<Rigidbody>();
     }
-
 
     public override void OnEpisodeBegin()
     {
@@ -41,44 +41,57 @@ public class rollerAgent : Agent
         sensor.AddObservation(rBody.velocity.z);
     }
 
-   public float forceMultiplier = 10;
+    public float speed = 1;
+    public float rotationSpeed = 120;
+
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
-        // Actions, size = 2
-        Vector3 controlSignal = Vector3.zero;
-        controlSignal.x = actionBuffers.ContinuousActions[0];
-        controlSignal.z = actionBuffers.ContinuousActions[1];
-        rBody.AddForce(controlSignal * forceMultiplier);
+        int actionValue = actionBuffers.DiscreteActions[0];
 
-        // Rewards
+        if(actionValue == 3)
+        {
+            transform.position += transform.forward * speed * Time.deltaTime;
+        }
+        else if(actionValue == 2)
+        {
+            transform.Rotate(transform.up * -rotationSpeed * Time.deltaTime);
+        }
+        else if (actionValue == 1)
+        {
+            transform.Rotate(transform.up * rotationSpeed * Time.deltaTime);
+        }
+
         float distanceToTarget = Vector3.Distance(this.transform.position, Target.localPosition);
-
-        // Reached target
-        if (distanceToTarget < 1.42f)
+        if(distanceToTarget < 1.42f)
         {
             SetReward(1.0f);
             EndEpisode();
         }
-
         // Fell off platform
         else if (this.transform.localPosition.y < 0)
         {
+            SetReward(-1.0f);
             EndEpisode();
         }
     }
-    
 
-    private void OnTriggerEnter(Collider other){
-
-
-            SetReward(1.0f);
-            EndEpisode();
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+            SetReward(-0.5f);
     }
-
     public override void Heuristic(in ActionBuffers actionsOut)
-{
-    var continuousActionsOut = actionsOut.ContinuousActions;
-    continuousActionsOut[0] = Input.GetAxis("Horizontal");
-    continuousActionsOut[1] = Input.GetAxis("Vertical");
-}
+    {
+        int value = 0;
+
+        if(Input.GetKey(KeyCode.LeftArrow))
+            value = 1;
+        else if(Input.GetKey(KeyCode.RightArrow))
+            value = 2;
+        else if(Input.GetKey(KeyCode.UpArrow))
+            value = 3; 
+
+        var aux = actionsOut.DiscreteActions;
+        aux[0] = value;
+    }
 }
