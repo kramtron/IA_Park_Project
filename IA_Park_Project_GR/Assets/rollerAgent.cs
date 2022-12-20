@@ -25,9 +25,9 @@ public class rollerAgent : Agent
         }
 
         // Move the target to a new spot
-        Target.localPosition = new Vector3(Random.value * 0f - 0.4f,
-                                           1.0f,
-                                           Random.value * 0f - 0.4f);
+        Target.localPosition = new Vector3(Random.value * 8 - 4,
+                                           0.7f,
+                                           Random.value * 8 - 4);
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -51,10 +51,10 @@ public class rollerAgent : Agent
         rBody.AddForce(controlSignal * forceMultiplier);
 
         // Rewards
-        float distanceToTarget = Vector3.Distance(this.transform.positions, Target.localPosition);
+        float distanceToTarget = Vector3.Distance(this.transform.position, Target.localPosition);
 
         // Reached target
-        if (distanceToTarget < 2f)
+        if (distanceToTarget < 1.42f)
         {
             SetReward(1.0f);
             EndEpisode();
