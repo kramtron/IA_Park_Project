@@ -17,11 +17,9 @@ public class rollerAgent : Agent
     public override void OnEpisodeBegin()
     {
        // If the Agent fell, zero its momentum
-        if (this.transform.localPosition.y < 0)
+        if (this.transform.localPosition.x <= 5 && this.transform.localPosition.x >= -5 && this.transform.localPosition.z <= 5 && this.transform.localPosition.z >= -5)
         {
-            this.rBody.angularVelocity = Vector3.zero;
-            this.rBody.velocity = Vector3.zero;
-            this.transform.localPosition = new Vector3( 0, 0.5f, 0);
+           
         }
 
         // Move the target to a new spot
@@ -93,5 +91,13 @@ public class rollerAgent : Agent
 
         var aux = actionsOut.DiscreteActions;
         aux[0] = value;
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        Debug.Log("NOOOOO");
+        this.rBody.angularVelocity = Vector3.zero;
+                    this.rBody.velocity = Vector3.zero;
+                    this.transform.localPosition = new Vector3( 0, 0.5f, 0);
     }
 }
