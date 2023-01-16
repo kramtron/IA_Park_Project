@@ -58,7 +58,7 @@ public class ChillingBoyScript : MonoBehaviour
 
     private void TargetPositionChanger()
     {
-        target.transform.position = newVec = new Vector3(UnityEngine.Random.Range(5, -5), 0, UnityEngine.Random.Range(5, -5));
+        target.transform.position = newVec = new Vector3(UnityEngine.Random.Range(10, -10), 0, UnityEngine.Random.Range(10, -10));
     }
 
     private void Seek()
